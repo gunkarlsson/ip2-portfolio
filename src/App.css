@@ -1,3 +1,23 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: "Kaftan Serif";
+  src: local("KaftanSerif.otf");
+  /* src: local("KaftanSerif.otf") format("otf"); */
+}
+
+:root {
+  --primary-color: #f4f0df;
+  --secondary-color: #f2d7cf;
+}
+
+body,
+html {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Kaftan Serif";
+  box-sizing: border-box;
+}
+
+h3 {
+  font-family: "Helvetica Neue";
 }
