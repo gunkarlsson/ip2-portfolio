@@ -1,7 +1,12 @@
 import React from "react";
+import styled from "styled-components";
+
+const AboutDiv = styled.div`
+  /* min-height: 100vh; */
+`;
 
 function About(props) {
-  return <div>This is about {props.name}</div>;
+  return <AboutDiv>This is about {props.name}</AboutDiv>;
 }
 
 export default About;

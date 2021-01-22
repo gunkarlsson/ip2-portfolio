@@ -8,28 +8,29 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
 
-const BGWrapper = styled.div`
-  background-color: var(--primary-color);
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// const BGWrapper = styled.div`
+//   background-color: var(--primary-color);
+//   min-height: 100vh;
+//   min-width: 100vw;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-  .bg-fill {
-    background-color: var(--secondary-color);
-    height: 95vh;
-    width: 95vw;
-  }
-`;
+//   .bg-fill {
+//     background-color: var(--secondary-color);
+//     height: 95vh;
+//     width: 95vw;
+//   }
+// `;
 
 function App() {
   return (
     <Router>
       <Switch>
-        <BGWrapper>
+        <div className="bg-wrapper">
           <div className="bg-fill">
             <Burger />
+
             <Route path="/projects">
               <Projects />
             </Route>
@@ -43,7 +44,7 @@ function App() {
               <Home />
             </Route>
           </div>
-        </BGWrapper>
+        </div>
       </Switch>
     </Router>
   );

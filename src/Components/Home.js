@@ -1,24 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 
-const Title = styled.h1`
-  display: inline-block;
-  font-size: 5rem;
-  color: black;
+const HomeDiv = styled.div`
+  /* min-height: 100vh; */
+`;
 
-  -webkit-text-stroke: 0.1px rgb(0, 0, 0);
+const Title = styled.div`
+  h1 {
+    display: inline-block;
+    font-size: 5rem;
+    color: black;
+    -webkit-text-stroke: 0.1px rgb(0, 0, 0);
+    margin-top: 120px;
+    margin-left: 50px;
+  }
 
-  :hover {
+  h1:hover {
     color: transparent;
   }
 `;
 
 function Home() {
   return (
-    <div>
-      <Title>Gun Karlsson</Title>
-      <h3>Front end portfolio</h3>
-    </div>
+    <HomeDiv>
+      <Title>
+        <h1>Gun Karlsson</h1>
+        <h3>Front end portfolio</h3>
+      </Title>
+    </HomeDiv>
   );
 }
 

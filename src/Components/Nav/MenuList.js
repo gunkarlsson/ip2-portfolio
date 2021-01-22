@@ -15,13 +15,15 @@ const Ul = styled.ul`
   height: 35vh;
   width: 200px;
   padding-top: 90px;
-  padding-right: 50px;
+  padding-right: 60px;
   text-align: right;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
   font-size: 1.5rem;
 
   li {
-    padding: 10px 0px;
+    padding: 6px 0px;
+    /* opacity: ${({ open }) => (open ? 1 : 0)};
+    transition: opacity 1.2s linear; */
   }
 
   a {

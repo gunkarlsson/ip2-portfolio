@@ -21,3 +21,17 @@ html {
 h3 {
   font-family: "Helvetica Neue";
 }
+.bg-wrapper {
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-fill {
+  background-color: var(--secondary-color);
+  height: 95vh;
+  width: 95vw;
+}
