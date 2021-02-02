@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Repo from "./Repo";
+// import Grid from "./Styles/Grid";
+// import FullWidthSection from "./Styles/FullWidthSection";
+// import MaxWidthSection from "./Styles/MaxWidthSection";
+// import Row from "./Styles/Row";
+
+// const ProjectDiv = styled(FullWidthSection)`
+//   padding: 4rem 1.5rem;
+// `;
 
 const ProjectDiv = styled.div`
-  /* min-height: 100vh; */
+  min-height: 90vh;
+  border: 2px solid green;
   h1 {
     font-size: 5rem;
     line-height: 3rem;
-    margin-left: 100px;
+    margin: 90px 0 0 80px;
   }
-
   h1:last-of-type {
-    margin-left: 300px;
+    margin: 40px 0 0 280px;
   }
-
   button {
     outline: none;
     border: none;
@@ -21,7 +28,6 @@ const ProjectDiv = styled.div`
     padding: 1rem 1.5rem;
     cursor: pointer;
   }
-
   button:hover {
     background-color: rgba(255, 255, 255, 0.6);
   }

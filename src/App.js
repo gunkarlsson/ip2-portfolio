@@ -7,6 +7,7 @@ import Burger from "./Components/Nav/Burger";
 import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
+import AppGrid from "./AppGrid";
 
 // const BGWrapper = styled.div`
 //   background-color: var(--primary-color);
@@ -27,6 +28,9 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/appgrid">
+          <AppGrid />
+        </Route>
         <div className="bg-wrapper">
           <div className="bg-fill">
             <Burger />
