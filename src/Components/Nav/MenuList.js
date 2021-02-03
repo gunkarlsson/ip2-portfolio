@@ -12,8 +12,8 @@ const Ul = styled.ul`
   margin: 0;
   top: 0;
   right: 0;
-  height: 35vh;
-  width: 200px;
+  height: 240px;
+  width: 100px;
   padding-top: 90px;
   padding-right: 60px;
   text-align: right;
