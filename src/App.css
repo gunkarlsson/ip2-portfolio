@@ -24,7 +24,12 @@ h1 {
 h2 {
   font-family: "Kaftan Serif";
 }
-
+a {
+  color: black;
+}
+a:hover {
+  background-color: var(--primary-color);
+}
 /* .bg-wrapper {
   background-color: var(--primary-color);
   height: 100vh;
@@ -75,7 +80,7 @@ h2 {
 }
 
 .contact {
-  height: 97vh;
+  height: 100vh;
   grid-row: 4;
   grid-column: 1;
 }

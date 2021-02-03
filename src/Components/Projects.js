@@ -5,46 +5,60 @@ import Repo from "./Repo";
 const ProjectsSection = styled.section`
   overflow: hidden;
   height: 100%;
-  width: 100%;
+  max-width: 100vw;
   /* outline: 20px solid var(--primary-color);
   outline-offset: -20px; */
   display: grid;
-  grid-template: 3fr 6fr 1fr / 6fr 1fr 9fr 1fr;
+  grid-template: 1fr 2fr 4fr / 6fr 1fr 9fr 1fr;
 
   .page-title {
-    height: calc(100vh - 20px);
+    grid-row: 1 / -1;
+    grid-column: 1;
+    /* height: calc(100vh - 20px);
     margin-top: 20px;
-    position: absolute;
+    position: absolute; */
     background-color: var(--secondary-color);
-    transition: all 0.5s ease;
+    transition: all 0.6s ease;
     h1 {
       font-size: 5rem;
       line-height: 3rem;
       margin: 300px 20px 0 50px;
     }
     h1:last-of-type {
-      margin: 40px 0 0 280px;
+      margin: 40px 0 0 260px;
     }
   }
   .page-title.active {
     background-color: var(--primary-color);
   }
+
+  .repo-div {
+    max-width: 52vw;
+    grid-row: 2 / 4;
+    grid-column: 3;
+  }
+
   button {
     outline: none;
     border: none;
     background-color: rgba(255, 255, 255, 0.3);
-    padding: 1rem 1.5rem;
+    padding: 1rem 1rem;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
+    transition: all 0.4s ease;
   }
   button:hover {
     background-color: rgba(255, 255, 255, 0.6);
   }
-
-  .buttons {
-    .right-btn {
-    }
-    .left-btn {
-    }
+  .left-btn {
+    grid-row: 3;
+    grid-column: 4;
+  }
+  .right-btn {
+    margin-top: 55px;
+    grid-row: 3;
+    grid-column: 4;
   }
 `;
 
@@ -56,7 +70,7 @@ function Projects() {
   const [sectionBg, setSectionBg] = useState(false);
 
   const changeSectionBg = () => {
-    if (window.scrollY >= 500) {
+    if (window.scrollY >= 400) {
       setSectionBg(true);
     } else {
       setSectionBg(false);
@@ -107,15 +121,12 @@ function Projects() {
           />
         )}
       </div>
-
-      <div className="buttons">
-        <button className="left-btn" onClick={decrement}>
-          <i class="fas fa-arrow-left"></i>
-        </button>
-        <button className="right-btn" onClick={increment}>
-          <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
+      <button className="left-btn" onClick={decrement}>
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button className="right-btn" onClick={increment}>
+        <i class="fas fa-arrow-right"></i>
+      </button>
     </ProjectsSection>
   );
 }

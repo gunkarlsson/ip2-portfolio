@@ -2,30 +2,26 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 const RepoDiv = styled.div`
-  border: 1px solid blue;
-  margin: 20px 50px 0px 480px;
+  overflow: hidden;
+  /* margin: 20px 50px 0px 480px;
   height: calc(100vh - 40px);
-  position: absolute;
+  position: absolute; */
 
   .info-titles {
-    margin-top: 100px;
     h3 {
-      font-size: 4rem;
+      font-size: 3rem;
       margin: 10px 0;
     }
   }
 
   .info-text {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     line-height: 1rem;
-    border: 1px solid teal;
-    width: 500px;
   }
 
   .image {
     img {
-      max-width: 45vw;
-      max-height: 40vh;
+      max-width: 100%;
     }
   }
 

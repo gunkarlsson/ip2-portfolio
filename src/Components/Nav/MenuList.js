@@ -32,7 +32,6 @@ const Ul = styled.ul`
   }
   a {
     text-decoration: none;
-    color: black;
   }
   a:hover {
     text-decoration: underline;
@@ -69,7 +68,13 @@ function MenuList({ open }) {
         </Link>
       </li>
       <li>
-        <Link smooth to="#contact" smooth={true} duration={900}>
+        <Link
+          // smooth
+          // to="#contact"
+          // smooth={true}
+          // duration={900}
+          onClick={() => scroll.scrollToBottom()}
+        >
           Contact
         </Link>
       </li>
