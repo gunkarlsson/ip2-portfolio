@@ -36,7 +36,7 @@ const Title = styled.div`
 
 function Home() {
   return (
-    <HomeDiv>
+    <HomeDiv id="home">
       <Title>
         <h1>{"Gun Karlsson".toUpperCase()}</h1>
         <hr />

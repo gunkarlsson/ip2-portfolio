@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Link } from "react-scroll";
 import styled from "styled-components";
 import "./App.css";
 import Home from "./Components/Home";
@@ -9,45 +10,30 @@ import Contact from "./Components/Contact";
 import Projects from "./Components/Projects";
 import AppGrid from "./AppGrid";
 
-// const BGWrapper = styled.div`
-//   background-color: var(--primary-color);
-//   min-height: 100vh;
-//   min-width: 100vw;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   .bg-fill {
-//     background-color: var(--secondary-color);
-//     height: 95vh;
-//     width: 95vw;
-//   }
-// `;
-
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/appgrid">
-          <AppGrid />
-        </Route>
-        <div className="bg-wrapper">
-          <div className="bg-fill">
-            <Burger />
+        <div className="container">
+          <Burger />
 
-            <Route path="/projects">
-              <Projects />
-            </Route>
-            <Route path="/about">
-              <About name="Gun" />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/home">
-              <Home />
-            </Route>
+          <div className="home">
+            <Home />
           </div>
+
+          <div className="projects">
+            <Projects />
+          </div>
+
+          <div className="about">
+            <About name="Gun" />
+          </div>
+          <div className="contact">
+            <Contact />
+          </div>
+
+          {/* </div>
+        </div> */}
         </div>
       </Switch>
     </Router>

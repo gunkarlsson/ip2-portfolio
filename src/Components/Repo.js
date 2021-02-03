@@ -3,25 +3,29 @@ import styled from "styled-components";
 
 const RepoDiv = styled.div`
   border: 1px solid blue;
-  display: flex;
+  margin: 20px 50px 0px 480px;
+  height: calc(100vh - 40px);
+  position: absolute;
 
   .info-titles {
-    font-family: "Kaftan Serif";
-    border: 1px solid orange;
-    width: 300px;
-    margin: 10px 0 0 50px;
+    margin-top: 100px;
+    h3 {
+      font-size: 4rem;
+      margin: 10px 0;
+    }
   }
-  .info-text {
-    border: 1px solid teal;
-    width: 300px;
-    margin: 0px 0 0 50px;
-  }
-  .image {
-    border: 1px solid coral;
 
+  .info-text {
+    font-size: 1.5rem;
+    line-height: 1rem;
+    border: 1px solid teal;
+    width: 500px;
+  }
+
+  .image {
     img {
-      z-index: -1;
-      max-width: 600px;
+      max-width: 45vw;
+      max-height: 40vh;
     }
   }
 
@@ -40,25 +44,21 @@ const Repo = ({ repo }) => {
   return (
     <RepoDiv>
       <div className="info-titles">
-        <h3>Name: </h3>
-        <h3>Description: </h3>
-        <h3>Github link: </h3>
-        <h3>Created at: </h3>
-        <h3>Last updated: </h3>
+        <h3>{name.charAt(0).toUpperCase() + name.slice(1)}</h3>
       </div>
 
-      <div className="info-text">
-        <p>{name.charAt(0).toUpperCase() + name.slice(1)}</p>
-        <p>{description}</p>
-        <a href="{html_url}">{name}</a>
-        <p>{created_at.slice(0, -10)}</p>
-        <p>{updated_at.slice(0, -10)}</p>
-      </div>
       <div className="image">
         <img
           src="https://images.unsplash.com/photo-1552865703-8168fcd8d541?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
           alt=""
         />
+      </div>
+
+      <div className="info-text">
+        <p>{description}</p>
+        <a href="{html_url}">Github link</a>
+        <p>Created at: {created_at.slice(0, -10)}</p>
+        <p>Last updated: {updated_at.slice(0, -10)}</p>
       </div>
     </RepoDiv>
   );

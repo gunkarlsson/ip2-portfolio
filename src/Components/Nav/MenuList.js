@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
+// import { Link, animateScroll as scroll } from "react-scroll";
+import { animateScroll as scroll } from "react-scroll";
+import Projects from "../Projects";
 
 const Ul = styled.ul`
   list-style: none;
@@ -19,22 +23,20 @@ const Ul = styled.ul`
   text-align: right;
   transition: transform 0.4s ease;
   font-size: 1.5rem;
+  z-index: 10;
 
   li {
     padding: 6px 0px;
     /* opacity: ${({ open }) => (open ? 1 : 0)};
     transition: opacity 1.2s linear; */
   }
-
   a {
     text-decoration: none;
     color: black;
   }
-
   a:hover {
     text-decoration: underline;
   }
-
   @media (max-width: 400px) {
     width: 50vw;
     height: 50vh;
@@ -46,16 +48,30 @@ function MenuList({ open }) {
   return (
     <Ul open={open}>
       <li>
-        <Link to="/home">Home</Link>
+        <Link
+          // to="home"
+          // smooth={true}
+          // duration={900}
+          onClick={() => scroll.scrollToTop()}
+        >
+          Home
+        </Link>
+      </li>
+      {/* <Route path="/projects" component={Projects} /> */}
+      <li>
+        <Link smooth to="#projects" duration={900}>
+          Projects
+        </Link>
       </li>
       <li>
-        <Link to="/projects">Projects</Link>
+        <Link to="#about" smooth={true} duration={900}>
+          About
+        </Link>
       </li>
       <li>
-        <Link to="/about">About</Link>
-      </li>
-      <li>
-        <Link to="/contact">Contact</Link>
+        <Link smooth to="#contact" smooth={true} duration={900}>
+          Contact
+        </Link>
       </li>
     </Ul>
   );
