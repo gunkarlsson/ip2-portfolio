@@ -31,6 +31,9 @@ a {
 a:hover {
   background-color: var(--primary-color);
 }
+p {
+  white-space: pre-line;
+}
 
 /* SCROLLBAR */
 body::-webkit-scrollbar {

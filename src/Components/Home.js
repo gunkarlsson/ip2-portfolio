@@ -1,8 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import { animateScroll as scroll } from "react-scroll";
 
 const HomeDiv = styled.div`
-  /* min-height: 100vh; */
+  button {
+    margin-top: calc(60vh - 50px);
+    margin-left: 50px;
+    grid-row: 4;
+    grid-column: 1;
+    outline: none;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  button:hover {
+    transition: transform 0.4s ease;
+    transform: scale(1.2);
+    border: 2px solid black;
+  }
 `;
 
 const Title = styled.div`
@@ -43,6 +61,10 @@ function Home() {
         <h2>Front-end developer</h2>
         <h2>Portfolio 2021</h2>
       </Title>
+
+      <button onClick={() => scroll.scrollToBottom()}>
+        <i class="fas fa-arrow-down"></i>
+      </button>
     </HomeDiv>
   );
 }

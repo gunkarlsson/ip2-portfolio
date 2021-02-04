@@ -87,8 +87,8 @@ function Contact() {
         </div>
 
         <p>
-          Looking for an intern? Starting 1st of November 2021, I'm open to
-          start am internship. If you're also located in Melbourne, Australia,
+          Looking for an intern? 1st of November 2021, I'm ready to start an
+          internship. If you're happen to be located in Melbourne, Australia,
           you'll be at the top of my wishlist.
         </p>
       </article>
