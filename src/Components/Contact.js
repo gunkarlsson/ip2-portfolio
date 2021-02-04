@@ -82,7 +82,7 @@ function Contact() {
         <hr />
         <div className="contact-links">
           <a href="https://github.com/gunkarlsson">Github</a>{" "}
-          <a href="https://gunkarlsson.com/">Website</a>{" "}
+          <a href="https://gunkarlsson.com/">Illustration / Animation</a>{" "}
           <a href="https://www.instagram.com/gunimation/">Instagram</a>
         </div>
 

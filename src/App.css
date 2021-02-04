@@ -9,18 +9,19 @@
   --secondary-color: #f2d7cf;
 }
 
+/* GLOBAL STYLES */
 body,
 html {
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue";
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 h1 {
   font-family: "Kaftan Serif";
 }
-
 h2 {
   font-family: "Kaftan Serif";
 }
@@ -30,22 +31,31 @@ a {
 a:hover {
   background-color: var(--primary-color);
 }
-/* .bg-wrapper {
+
+/* SCROLLBAR */
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+body::-webkit-scrollbar-track {
   background-color: var(--primary-color);
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: black;
+}
+body::-webkit-scrollbar:hover {
+  background-color: black;
+  cursor: grab;
 }
 
-.bg-fill {
-  background-color: var(--secondary-color);
-  height: 95vh;
-  width: 95vw;
-} */
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black var(--primary-color);
+}
 
+/* APP CONTAINER */
 .container {
+  overflow: auto;
   background-color: var(--secondary-color);
   border: 20px solid var(--primary-color);
   /* outline: 20px solid var(--primary-color);
