@@ -77,14 +77,6 @@ function Projects() {
     }
   };
   window.addEventListener("scroll", changeSectionBg);
-  // const [offsetY, setOffsetY] = useState(0);
-  // const handleScroll = () => setOffsetY(window.pageYOffset);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
 
   const decrement = () => {
     if (repoIndex > 0) {
