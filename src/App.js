@@ -17,23 +17,13 @@ function App() {
         <div className="container">
           <Burger />
 
-          <div className="home">
-            <Home />
-          </div>
+          <Home className="home" />
 
-          <div className="projects">
-            <Projects />
-          </div>
+          <Projects className="projects" />
 
-          <div className="about">
-            <About name="Gun" />
-          </div>
-          <div className="contact">
-            <Contact />
-          </div>
+          <About className="about" name="Gun" />
 
-          {/* </div>
-        </div> */}
+          <Contact className="contact" />
         </div>
       </Switch>
     </Router>

@@ -4,21 +4,16 @@ import Repo from "./Repo";
 
 const ProjectsSection = styled.section`
   overflow: hidden;
-  height: 100%;
-  max-width: 100vw;
-  /* outline: 20px solid var(--primary-color);
-  outline-offset: -20px; */
+  border: 2px solid green;
   display: grid;
-  grid-template: 1fr 2fr 4fr / 6fr 1fr 9fr 1fr;
+  grid-template: 1fr 6fr 1fr / 6fr 1fr 9fr 1fr;
 
   .page-title {
     grid-row: 1 / -1;
     grid-column: 1;
-    /* height: calc(100vh - 20px);
-    margin-top: 20px;
-    position: absolute; */
     background-color: var(--secondary-color);
     transition: all 0.6s ease;
+
     h1 {
       font-size: 5rem;
       line-height: 3rem;
@@ -34,31 +29,34 @@ const ProjectsSection = styled.section`
 
   .repo-div {
     max-width: 52vw;
-    grid-row: 2 / 4;
+    grid-row: 2;
     grid-column: 3;
   }
 
   button {
     outline: none;
     border: none;
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 1rem 1rem;
-    width: 50px;
-    height: 50px;
+    background-color: rgba(255, 255, 255, 0.4);
+    font-size: 1rem;
+    width: 40px;
+    height: 45px;
     cursor: pointer;
     transition: all 0.4s ease;
   }
   button:hover {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
   }
   .left-btn {
-    grid-row: 3;
-    grid-column: 4;
+    grid-row: 2;
+    grid-column: 2;
+    align-self: center;
+    justify-self: right;
   }
   .right-btn {
-    margin-top: 55px;
-    grid-row: 3;
+    grid-row: 2;
     grid-column: 4;
+    align-self: center;
+    justify-self: left;
   }
 `;
 
@@ -114,10 +112,10 @@ function Projects() {
         )}
       </div>
       <button className="left-btn" onClick={decrement}>
-        <i class="fas fa-arrow-left"></i>
+        <i class="fas fa-angle-left"></i>
       </button>
       <button className="right-btn" onClick={increment}>
-        <i class="fas fa-arrow-right"></i>
+        <i class="fas fa-angle-right"></i>
       </button>
     </ProjectsSection>
   );

@@ -1,32 +1,32 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import pall2 from "./pall2.jpg";
+import pall3 from "../Img/pall3.jpg";
+import pall2 from "../Img/pall2.jpg";
 
 const AboutSection = styled.section`
   overflow: hidden;
-  max-height: 100%;
-  max-width: 100vw;
+  border: 2px solid blue;
   display: grid;
-  grid-template: 1fr 2fr 4fr / 6fr 1fr 9fr 1fr;
+  grid-template: 1fr 6fr 1fr / 6fr 1fr 9fr 1fr;
 
   .about-title {
     grid-row: 1 / -1;
     grid-column: 1;
     background-color: var(--primary-color);
-    height: 100vh;
+
     h1 {
       font-size: 5rem;
       line-height: 3rem;
       margin: 300px 20px 0 50px;
     }
     h1:last-of-type {
-      margin: 40px 0 0 100px;
+      margin: 40px 0 0 120px;
     }
   }
 
   .about-text {
     max-width: 52vw;
-    grid-row: 2 / 4;
+    grid-row: 2;
     grid-column: 3;
     padding: 50px;
 
@@ -37,8 +37,19 @@ const AboutSection = styled.section`
   }
 
   img {
-    width: 100px;
-    height: 100px;
+    display: none;
+  }
+
+  .hover-text:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+  }
+  .hover-text:hover ~ img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    transform: translateY(20px) translateX(50px);
+    z-index: -1;
   }
 `;
 
@@ -77,14 +88,19 @@ function About(props) {
           the last puzzle piece. {"\n"}
           {"\n"}
           In August 2020, I started studying full-time to become a front-end
-          developer. When I’m not glued to my computer, I build wonky furniture
-          and carve spoons.
+          developer. When I’m not glued to my computer, I build{" "}
+          <span className="hover-text">wonky furniture</span> and carve spoons.{" "}
+          <img className="hover-text hidden-image" src={pall3} alt="" />
         </p>
-        <img src={require("../Img/pall2.jpg")} alt="pall" />
-        <p>hello</p>
+
+        {/* 
+        <StyledImage src={pall3} />
+        <StyledImage src={pall2} /> */}
+
+        {/* <img src={pall3} alt="eh" />
         {pall2}
-        <img src="{pall2}" alt="he" />
-        <img src={"{pall2}"} alt="be" />
+        <img src={pall2} alt="test2" />
+        <img src={{ pall2 }} alt="test3" /> */}
       </article>
     </AboutSection>
   );

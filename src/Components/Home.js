@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
 
 const HomeDiv = styled.div`
+  overflow: hidden;
+  border: 2px solid yellow;
+  height: 96vh;
+
   button {
-    margin-top: calc(60vh - 50px);
+    margin-top: 300px;
     margin-left: 50px;
-    grid-row: 4;
-    grid-column: 1;
     outline: none;
     border: 1px solid black;
     background-color: transparent;
@@ -23,7 +25,7 @@ const HomeDiv = styled.div`
   }
 `;
 
-const Title = styled.div`
+const Title = styled.section`
   h1 {
     font-size: 7rem;
     line-height: 7.6rem;
