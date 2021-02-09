@@ -5,10 +5,10 @@ import { animateScroll as scroll } from "react-scroll";
 const HomeDiv = styled.div`
   overflow: hidden;
   border: 2px solid yellow;
-  height: 96vh;
+  height: 98vh;
 
   button {
-    margin-top: 300px;
+    margin-top: 260px;
     margin-left: 50px;
     outline: none;
     border: 1px solid black;

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import pall3 from "../Img/pall3.jpg";
-import pall2 from "../Img/pall2.jpg";
 
 const AboutSection = styled.section`
   overflow: hidden;
@@ -26,13 +25,12 @@ const AboutSection = styled.section`
 
   .about-text {
     max-width: 52vw;
-    grid-row: 2;
+    grid-row: 2 / 3;
     grid-column: 3;
-    padding: 50px;
+    padding: 30px;
 
     p {
       font-size: 1.2rem;
-      margin: 30px 0;
     }
   }
 
@@ -46,8 +44,8 @@ const AboutSection = styled.section`
   }
   .hover-text:hover ~ img {
     display: block;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     transform: translateY(20px) translateX(50px);
     z-index: -1;
   }

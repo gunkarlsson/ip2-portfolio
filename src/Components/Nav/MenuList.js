@@ -47,34 +47,22 @@ function MenuList({ open }) {
   return (
     <Ul open={open}>
       <li>
-        <Link
-          // to="home"
-          // smooth={true}
-          // duration={900}
-          onClick={() => scroll.scrollToTop()}
-        >
+        <Link to="#home" onClick={() => scroll.scrollToTop()}>
           Home
         </Link>
       </li>
-      {/* <Route path="/projects" component={Projects} /> */}
       <li>
-        <Link smooth to="#projects" duration={900}>
+        <Link to="#projects" smooth={true} duration={1200}>
           Projects
         </Link>
       </li>
       <li>
-        <Link to="#about" smooth={true} duration={900}>
+        <Link to="#about" smooth={true} duration={1200}>
           About
         </Link>
       </li>
       <li>
-        <Link
-          // smooth
-          // to="#contact"
-          // smooth={true}
-          // duration={900}
-          onClick={() => scroll.scrollToBottom()}
-        >
+        <Link to="#contact" onClick={() => scroll.scrollToBottom()}>
           Contact
         </Link>
       </li>

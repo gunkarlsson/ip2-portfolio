@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import Repo from "./Repo";
+import { selectedRepos } from "./SelectedRepos";
 
 const ProjectsSection = styled.section`
   overflow: hidden;
@@ -65,16 +66,15 @@ function Projects() {
   const [allRepos, setAllRepos] = useState([]);
   const [repoIndex, setRepoIndex] = useState(0); //inom parantes är vad den börjar med
 
-  const [sectionBg, setSectionBg] = useState(false);
-
-  const changeSectionBg = () => {
-    if (window.scrollY >= 400) {
-      setSectionBg(true);
-    } else {
-      setSectionBg(false);
-    }
-  };
-  window.addEventListener("scroll", changeSectionBg);
+  // const [sectionBg, setSectionBg] = useState(false);
+  // const changeSectionBg = () => {
+  //   if (window.scrollY >= 400) {
+  //     setSectionBg(true);
+  //   } else {
+  //     setSectionBg(false);
+  //   }
+  // };
+  // window.addEventListener("scroll", changeSectionBg);
 
   const decrement = () => {
     if (repoIndex > 0) {
@@ -90,13 +90,16 @@ function Projects() {
   useEffect(() => {
     fetch(API_URL)
       .then((response) => response.json())
-      .then((data) => setAllRepos(data));
+      .then((data) =>
+        setAllRepos(data.filter((repo) => selectedRepos.includes(repo.id)))
+      );
   }, []);
 
   return (
     <ProjectsSection id="projects">
       <div
-        className={sectionBg ? "page-title active" : "page-title"}
+        className="page-title active"
+        // className={sectionBg ? "page-title active" : "page-title"}
         // style={{ transform: `translateY(${offsetY * 0.5}px)` }}
       >
         <h1>Projects</h1>

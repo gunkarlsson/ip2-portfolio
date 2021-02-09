@@ -8,18 +8,17 @@ const RepoDiv = styled.div`
       margin: 10px 0;
     }
   }
-
   .info-text {
     font-size: 1.2rem;
     line-height: 1rem;
   }
-
   .repo-image {
     img {
-      max-width: 100%;
+      max-width: 98%;
+      /* box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.1); */
+      border: 6px solid white;
     }
   }
-
   a {
     font-family: "Helvetica Neue";
     color: black;
@@ -30,8 +29,8 @@ const RepoDiv = styled.div`
 `;
 
 const Repo = ({ repo }) => {
-  const { name, description, homepage, created_at, updated_at } = repo;
-  console.log({ name }, { homepage });
+  const { name, description, homepage, created_at, updated_at, id } = repo;
+
   return (
     <RepoDiv>
       <div className="repo-title">
@@ -39,10 +38,7 @@ const Repo = ({ repo }) => {
       </div>
 
       <div className="repo-image">
-        <img
-          src="https://images.unsplash.com/photo-1552865703-8168fcd8d541?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-          alt=""
-        />
+        <img src={"img/" + id + ".png"} alt="Project preview image" />
       </div>
 
       <div className="info-text">
