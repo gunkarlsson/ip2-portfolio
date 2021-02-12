@@ -3,46 +3,30 @@ import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
 
 const ContactSection = styled.section`
-  overflow: hidden;
+  height: 100vh;
   display: grid;
-  grid-template: 1fr 6fr 1fr / 6fr 1fr 9fr 1fr;
+  grid-template: 1fr 6fr 1fr / 5fr 1fr 9fr 1fr;
 
-  button {
-    grid-row: 3;
-    grid-column: 1;
-    margin-left: 50px;
-    outline: none;
-    border: 1px solid black;
-    background-color: transparent;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+  h1 {
+    font-size: 5rem;
+    line-height: 3rem;
+    margin: 250px 10px 0 80px;
   }
-  button:hover {
-    transition: transform 0.4s ease;
-    transform: scale(1.2);
-    border: 2px solid black;
-  }
+
   .contact-title {
     grid-row: 1 / -1;
     grid-column: 1;
     background-color: var(--primary-color);
-
-    h1 {
-      font-size: 5rem;
-      line-height: 3rem;
-      margin: 300px 20px 0 50px;
-    }
   }
 
   .contact-text {
-    margin-top: 100px;
+    margin-top: 90px;
     max-width: 52vw;
     grid-row: 2;
     grid-column: 3;
     padding: 50px;
     font-size: 1.2rem;
+    font-weight: 500;
 
     .contact-links {
       margin-top: 10px;
@@ -52,7 +36,7 @@ const ContactSection = styled.section`
     }
 
     p:last-of-type {
-      margin-top: 150px;
+      margin-top: 90px;
       font-style: italic;
     }
   }
@@ -61,6 +45,57 @@ const ContactSection = styled.section`
     border: 1px solid black;
     margin-top: 50px;
     width: 100%;
+  }
+
+  button {
+    grid-row: 3;
+    grid-column: 1;
+    margin-left: 60px;
+    outline: none;
+    border: 1px solid black;
+    background-color: transparent;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+  }
+  button:hover {
+    transition: transform 0.4s ease;
+    transform: scale(1.3);
+    border: 2px solid black;
+  }
+
+  /* MEDIA QUERIES */
+  @media (max-width: 400px) {
+    grid-template: 1fr 1fr 8fr / 1fr;
+
+    .contact-title {
+      grid-row: 1;
+      h1 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        margin: 80px 20px 10px 25px;
+      }
+    }
+    .contact-text {
+      grid-row: 2;
+      grid-column: 1;
+      margin-top: 20px;
+      padding: 30px;
+      max-width: 86vw;
+
+      p:last-of-type {
+        margin-top: 60px;
+      }
+    }
+
+    button {
+      margin-top: 10vh;
+      margin-left: 25px;
+      border: 2px solid black;
+      padding: 15px 5px;
+      font-size: 1rem;
+    }
   }
 `;
 

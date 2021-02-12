@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Link } from "react-scroll";
+import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Home";
 import Burger from "./Components/Nav/Burger";
@@ -11,16 +10,13 @@ import Projects from "./Components/Projects";
 function App() {
   return (
     <Router>
-      <Switch>
-        <main className="container">
-          <Burger />
-          <Home className="home" />
-
-          <Projects className="projects" />
-          <About className="about" name="Gun" />
-          <Contact className="contact" />
-        </main>
-      </Switch>
+      <main className="container">
+        <Burger />
+        <Home className="home" />
+        <Projects className="projects" />
+        <About className="about" name="Gun" />
+        <Contact className="contact" />
+      </main>
     </Router>
   );
 }

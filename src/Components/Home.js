@@ -3,66 +3,93 @@ import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
 
 const HomeDiv = styled.div`
-  overflow: hidden;
-  border: 2px solid yellow;
   height: 98vh;
 
+  .title {
+    width: 60vw;
+    h1 {
+      font-size: 8rem;
+      line-height: 7.7rem;
+      -webkit-text-stroke: 0.01px rgb(0, 0, 0);
+      margin: 60px 0 20px 60px;
+      transition: all 0.3s ease;
+    }
+
+    h1:hover {
+      color: transparent;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      line-height: 3rem;
+      margin: 0px 0px 0px 60px;
+    }
+
+    hr {
+      border: 1px solid black;
+      width: 48vw;
+      margin-left: 60px;
+      margin-bottom: 20px;
+    }
+  }
+
   button {
-    margin-top: 260px;
-    margin-left: 50px;
+    margin-top: 230px;
+    margin-left: 60px;
+    font-size: 0.9rem;
     outline: none;
     border: 1px solid black;
     background-color: transparent;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 55px;
+    height: 55px;
     cursor: pointer;
   }
   button:hover {
     transition: transform 0.4s ease;
-    transform: scale(1.2);
+    transform: scale(1.3);
     border: 2px solid black;
   }
-`;
 
-const Title = styled.section`
-  h1 {
-    font-size: 7rem;
-    line-height: 7.6rem;
-    color: black;
-    -webkit-text-stroke: 0.1px rgb(0, 0, 0);
-    margin: 30px 0 20px 50px;
-    width: 600px;
-    transition: all 0.3s ease;
-  }
-
-  h1:hover {
-    color: transparent;
-  }
-
-  h2 {
-    font-size: 2rem;
-    line-height: 3rem;
-    margin: 0px 0px 0px 50px;
-  }
-
-  hr {
-    border: 1px solid black;
-    width: 600px;
-    margin-left: 50px;
-    margin-bottom: 20px;
+  /* MEDIA QUERIES */
+  @media (max-width: 400px) {
+    .title {
+      width: 86vw;
+      h1 {
+        margin: 80px 0 10px 25px;
+        word-wrap: break-word;
+        font-size: 6.4rem;
+        line-height: 6.5rem;
+      }
+      h2 {
+        font-size: 1.7rem;
+        line-height: 2.2rem;
+        margin: 0px 0px 0px 25px;
+      }
+      hr {
+        width: 85%;
+        margin: 30px 0 30px 25px;
+      }
+    }
+    button {
+      margin-top: 20vh;
+      margin-left: 25px;
+      border: 2px solid black;
+      padding: 15px 5px;
+      font-size: 1.1rem;
+    }
   }
 `;
 
 function Home() {
   return (
     <HomeDiv id="home">
-      <Title>
+      <section className="title">
         <h1>{"Gun Karlsson".toUpperCase()}</h1>
         <hr />
         <h2>Front-end developer</h2>
         <h2>Portfolio 2021</h2>
-      </Title>
+      </section>
 
       <button onClick={() => scroll.scrollToBottom()}>
         <i class="fas fa-arrow-down"></i>

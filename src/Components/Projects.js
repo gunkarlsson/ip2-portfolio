@@ -4,10 +4,9 @@ import Repo from "./Repo";
 import { selectedRepos } from "./SelectedRepos";
 
 const ProjectsSection = styled.section`
-  overflow: hidden;
-  border: 2px solid green;
+  height: 100vh;
   display: grid;
-  grid-template: 1fr 6fr 1fr / 6fr 1fr 9fr 1fr;
+  grid-template: 1fr 6fr 1fr / 5fr 1fr 9fr 1fr;
 
   .page-title {
     grid-row: 1 / -1;
@@ -17,14 +16,14 @@ const ProjectsSection = styled.section`
     h1 {
       font-size: 5rem;
       line-height: 3rem;
-      margin: 300px 20px 0 50px;
+      margin: 250px 20px 0 90px;
     }
     h1:last-of-type {
-      margin: 40px 0 0 260px;
+      margin: 40px 20px 0 260px;
     }
   }
+
   .repo-div {
-    max-width: 52vw;
     grid-row: 2;
     grid-column: 3;
   }
@@ -32,12 +31,12 @@ const ProjectsSection = styled.section`
   button {
     outline: none;
     border: none;
-    background-color: rgba(255, 255, 255, 0.4);
-    font-size: 1rem;
-    width: 40px;
-    height: 45px;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    width: 45px;
+    height: 50px;
     cursor: pointer;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
   }
   button:hover {
     background-color: rgba(255, 255, 255, 0.8);
@@ -54,12 +53,48 @@ const ProjectsSection = styled.section`
     align-self: center;
     justify-self: left;
   }
+
+  /* MEDIA QUERIES */
+  @media (max-width: 400px) {
+    display: grid;
+    grid-template: 1fr 1fr 8fr / 1fr;
+    .page-title {
+      grid-row: 1;
+      grid-column: 1;
+      h1 {
+        font-size: 3.5rem;
+        line-height: 3.5rem;
+        margin: 40px 0 0 25px;
+      }
+      h1:last-of-type {
+        margin: 0 0 20px 130px;
+      }
+    }
+    .repo-div {
+      grid-row: 3;
+      grid-column: 1;
+      width: 86vw;
+    }
+    .repo-div img {
+      width: 100%;
+    }
+    .left-btn {
+      grid-column: 1;
+      justify-self: center;
+      margin-right: 50px;
+    }
+    .right-btn {
+      grid-column: 1;
+      justify-self: center;
+      margin-left: 50px;
+    }
+  }
 `;
 
 function Projects() {
   const API_URL = "https://api.github.com/users/gunkarlsson/repos";
   const [allRepos, setAllRepos] = useState([]);
-  const [repoIndex, setRepoIndex] = useState(0); //inom parantes är vad den börjar med
+  const [repoIndex, setRepoIndex] = useState(0);
 
   const decrement = () => {
     if (repoIndex > 0) {
@@ -83,7 +118,7 @@ function Projects() {
   return (
     <ProjectsSection id="projects">
       <div className="page-title">
-        <h1>Projects</h1>
+        <h1>Project</h1>
         {repoIndex < 9 ? <h1>0{repoIndex + 1}</h1> : <h1>{repoIndex + 1}</h1>}
       </div>
       <div className="repo-div">
