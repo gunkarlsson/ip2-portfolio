@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Kaftan Serif";
-  src: local("KaftanSerif.otf");
-  /* src: local("KaftanSerif.otf") format("otf"); */
+  src: url("./KaftanSerif.otf");
 }
 
 :root {
@@ -58,7 +57,6 @@ body::-webkit-scrollbar:hover {
 
 /* APP CONTAINER */
 .container {
-  overflow: auto;
   background-color: var(--secondary-color);
   border: 20px solid var(--primary-color);
   /* outline: 20px solid var(--primary-color);
@@ -66,11 +64,9 @@ body::-webkit-scrollbar:hover {
   padding: 20px; */
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr / 1fr;
+  /* overflow-y: scroll;
+  scroll-behavior: smooth; */
 }
-
-/* .container div {
-  max-width: 95vw;
-} */
 
 .home {
   height: 100vh;

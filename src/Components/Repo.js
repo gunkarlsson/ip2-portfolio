@@ -4,19 +4,22 @@ import styled from "styled-components";
 const RepoDiv = styled.div`
   .repo-title {
     h3 {
-      font-size: 3rem;
-      margin: 10px 0;
+      font-size: 3.5rem;
+      margin-bottom: 20px;
     }
   }
   .info-text {
     font-size: 1.2rem;
-    line-height: 1rem;
+    font-weight: 400;
+    line-height: 0.8rem;
   }
   .repo-image {
     img {
-      max-width: 98%;
+      width: 100%;
+      outline: 6px solid white;
+      outline-offset: -3px;
+      /* box-shadow: 3px 6px 15px #eeb3a0; */
       /* box-shadow: 3px 6px 10px rgba(0, 0, 0, 0.1); */
-      border: 6px solid white;
     }
   }
   a {

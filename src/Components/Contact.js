@@ -4,7 +4,6 @@ import { animateScroll as scroll } from "react-scroll";
 
 const ContactSection = styled.section`
   overflow: hidden;
-  border: 2px solid yellow;
   display: grid;
   grid-template: 1fr 6fr 1fr / 6fr 1fr 9fr 1fr;
 
@@ -65,34 +64,6 @@ const ContactSection = styled.section`
   }
 `;
 
-const LabelWrapper = styled.div`
-  position: absolute;
-  display: inline-block;
-
-  :hover span {
-    color: blue;
-    transition: 0.3s cubic-bezier(0.65, 0.01, 0.35, 1);
-  }
-
-  :hover span {
-    transform: translateY(-20px);
-  }
-
-  span {
-    color: red;
-  }
-
-  /* position: absolute;
-  :hover span {
-    color: blue;
-    transform: translateY(-20px);
-  }
-  span {
-    transition: 0.3s cubic-bezier(0.65, 0.01, 0.35, 1);
-    color: red;
-  } */
-`;
-
 function Contact() {
   const text = "test animation stuff";
   const labels = text
@@ -118,9 +89,7 @@ function Contact() {
           <a href="https://gunkarlsson.com/">Illustration / Animation</a>
           <a href="https://www.instagram.com/gunimation/">Instagram</a>
         </div>
-        <p>
-          <LabelWrapper>{labels}</LabelWrapper>
-        </p>
+
         <p>
           Looking for an intern? 1st of November 2021, I'm ready to start an
           internship. If you happen to be located in Melbourne, Australia,

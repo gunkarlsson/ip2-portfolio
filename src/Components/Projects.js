@@ -12,8 +12,7 @@ const ProjectsSection = styled.section`
   .page-title {
     grid-row: 1 / -1;
     grid-column: 1;
-    background-color: var(--secondary-color);
-    transition: all 0.6s ease;
+    background-color: var(--primary-color);
 
     h1 {
       font-size: 5rem;
@@ -24,10 +23,6 @@ const ProjectsSection = styled.section`
       margin: 40px 0 0 260px;
     }
   }
-  .page-title.active {
-    background-color: var(--primary-color);
-  }
-
   .repo-div {
     max-width: 52vw;
     grid-row: 2;
@@ -66,16 +61,6 @@ function Projects() {
   const [allRepos, setAllRepos] = useState([]);
   const [repoIndex, setRepoIndex] = useState(0); //inom parantes är vad den börjar med
 
-  // const [sectionBg, setSectionBg] = useState(false);
-  // const changeSectionBg = () => {
-  //   if (window.scrollY >= 400) {
-  //     setSectionBg(true);
-  //   } else {
-  //     setSectionBg(false);
-  //   }
-  // };
-  // window.addEventListener("scroll", changeSectionBg);
-
   const decrement = () => {
     if (repoIndex > 0) {
       setRepoIndex((last) => last - 1);
@@ -97,22 +82,12 @@ function Projects() {
 
   return (
     <ProjectsSection id="projects">
-      <div
-        className="page-title active"
-        // className={sectionBg ? "page-title active" : "page-title"}
-        // style={{ transform: `translateY(${offsetY * 0.5}px)` }}
-      >
+      <div className="page-title">
         <h1>Projects</h1>
         {repoIndex < 9 ? <h1>0{repoIndex + 1}</h1> : <h1>{repoIndex + 1}</h1>}
       </div>
       <div className="repo-div">
-        {allRepos.length > 0 && (
-          <Repo
-            id="repo"
-            repo={allRepos[repoIndex]}
-            // style={{ transform: `translateY(${offsetY * 0.9}px)` }}
-          />
-        )}
+        {allRepos.length > 0 && <Repo id="repo" repo={allRepos[repoIndex]} />}
       </div>
       <button className="left-btn" onClick={decrement}>
         <i class="fas fa-angle-left"></i>

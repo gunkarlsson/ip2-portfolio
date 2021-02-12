@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import pall3 from "../Img/pall3.jpg";
 
 const AboutSection = styled.section`
   overflow: hidden;
@@ -52,28 +51,14 @@ const AboutSection = styled.section`
 `;
 
 function About(props) {
-  // const [offsetY, setOffsetY] = useState(0);
-  // const handleScroll = () => setOffsetY(window.pageYOffset);
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
-
   return (
     <AboutSection id="about">
       <div className="about-title">
-        <h1
-        // style={{ transform: `translateY(${offsetY * -0.1}px)` }}
-        >
-          About
-        </h1>
+        <h1>About</h1>
         <h1>{props.name}</h1>
       </div>
       <article className="about-text">
-        <p
-        // style={{ transform: `translateY(${offsetY * 0.1}px)` }}
-        >
+        <p>
           My creative career began in the early nineties, when a happy young Gun
           drew an absolute garbage drawing that my kindergarten teacher praised
           like the Mona Lisa. It was taped onto the refrigerator and my fate
@@ -88,17 +73,12 @@ function About(props) {
           In August 2020, I started studying full-time to become a front-end
           developer. When I’m not glued to my computer, I build{" "}
           <span className="hover-text">wonky furniture</span> and carve spoons.{" "}
-          <img className="hover-text hidden-image" src={pall3} alt="" />
+          <img
+            src={"img/pall3.jpg"}
+            className="hover-text hidden-image"
+            alt="stool"
+          />
         </p>
-
-        {/* 
-        <StyledImage src={pall3} />
-        <StyledImage src={pall2} /> */}
-
-        {/* <img src={pall3} alt="eh" />
-        {pall2}
-        <img src={pall2} alt="test2" />
-        <img src={{ pall2 }} alt="test3" /> */}
       </article>
     </AboutSection>
   );

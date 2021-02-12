@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { HashLink as Link } from "react-router-hash-link";
-// import { Link, animateScroll as scroll } from "react-scroll";
-import { animateScroll as scroll } from "react-scroll";
+// import { HashLink as Link } from "react-router-hash-link";
+import { Link, animateScroll as scroll } from "react-scroll";
+// import { animateScroll as scroll } from "react-scroll";
 import Projects from "../Projects";
 
 const Ul = styled.ul`
@@ -27,8 +27,6 @@ const Ul = styled.ul`
 
   li {
     padding: 6px 0px;
-    /* opacity: ${({ open }) => (open ? 1 : 0)};
-    transition: opacity 1.2s linear; */
   }
   a {
     text-decoration: none;
@@ -47,22 +45,58 @@ function MenuList({ open }) {
   return (
     <Ul open={open}>
       <li>
-        <Link to="#home" onClick={() => scroll.scrollToTop()}>
+        <Link
+          activeClass="active"
+          to="home"
+          spy={true}
+          smooth={true}
+          offset={-20}
+          duration={700}
+          path="/home"
+          href="/home"
+        >
+          {/* <Link to="home" onClick={() => scroll.scrollToTop()}> */}
           Home
         </Link>
       </li>
       <li>
-        <Link to="#projects" smooth={true} duration={1200}>
-          Projects
-        </Link>
+        {/* <Link to="#projects" smooth={true} duration={1200}> */}
+        <a href="/projects">
+          <Link
+            to="projects"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={700}
+            href="/projects"
+          >
+            Projects
+          </Link>
+        </a>
       </li>
       <li>
-        <Link to="#about" smooth={true} duration={1200}>
+        <Link
+          activeClass="active"
+          to="about"
+          spy={true}
+          smooth={true}
+          offset={0}
+          duration={700}
+        >
+          {/* <Link to="#about" smooth={true} duration={1200}> */}
           About
         </Link>
       </li>
       <li>
-        <Link to="#contact" onClick={() => scroll.scrollToBottom()}>
+        <Link
+          activeClass="active"
+          to="contact"
+          spy={true}
+          smooth={true}
+          offset={10}
+          duration={700}
+        >
+          {/* <Link to="#contact" onClick={() => scroll.scrollToBottom()}> */}
           Contact
         </Link>
       </li>
