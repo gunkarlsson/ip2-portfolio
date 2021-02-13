@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
+import Pall3 from "../img/pall3.jpg";
+import Carving from "../img/carving1.JPG";
 
 const AboutSection = styled.section`
   height: 100vh;
@@ -33,13 +35,16 @@ const AboutSection = styled.section`
       margin-bottom: 20px;
       font-weight: 500;
     }
+    span {
+      text-decoration: underline;
+    }
   }
 
   img {
     opacity: 0;
     width: 200px;
     height: 200px;
-    margin-right: 50px;
+    margin-right: 90px;
     border: 15px solid var(--primary-color);
   }
 
@@ -126,10 +131,10 @@ function About(props) {
         <p>
           In August 2020, I started studying full-time to become a front-end
           developer. When I’m not glued to my computer, I build{" "}
-          <a className="hover-text1">wonky furniture</a> and{" "}
-          <a className="hover-text2">carve spoons.</a>
-          <img src={"img/pall3.jpg"} alt="stool" />
-          <img src={"img/carving1.jpg"} alt="spoons" />
+          <span className="hover-text1">wonky furniture</span> and{" "}
+          <span className="hover-text2">carve spoons.</span>
+          <img src={Pall3} alt="stool" />
+          <img src={Carving} alt="spoons" />
         </p>
       </article>
     </AboutSection>

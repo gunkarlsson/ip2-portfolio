@@ -10,7 +10,7 @@ const ContactSection = styled.section`
   h1 {
     font-size: 5rem;
     line-height: 3rem;
-    margin: 250px 10px 0 80px;
+    margin: 250px 10px 0 65px;
   }
 
   .contact-title {
@@ -100,13 +100,6 @@ const ContactSection = styled.section`
 `;
 
 function Contact() {
-  const text = "test animation stuff";
-  const labels = text
-    .split("")
-    .map((letter, idx) => (
-      <span style={{ "transition-delay": idx * 35 + "ms" }}>{letter}</span>
-    ));
-
   return (
     <ContactSection id="contact">
       <div className="contact-title">
@@ -132,7 +125,7 @@ function Contact() {
         </p>
       </article>
       <button onClick={() => scroll.scrollToTop()}>
-        <i class="fas fa-arrow-up"></i>
+        <i className="fas fa-arrow-up"></i>
       </button>
     </ContactSection>
   );

@@ -32,9 +32,9 @@ const ProjectsSection = styled.section`
     outline: none;
     border: none;
     background-color: rgba(255, 255, 255, 0.5);
-    font-size: 1.2rem;
-    width: 45px;
-    height: 50px;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 60px;
     cursor: pointer;
     transition: all 0.3s ease;
   }
@@ -125,10 +125,10 @@ function Projects() {
         {allRepos.length > 0 && <Repo id="repo" repo={allRepos[repoIndex]} />}
       </div>
       <button className="left-btn" onClick={decrement}>
-        <i class="fas fa-angle-left"></i>
+        <i className="fas fa-angle-left"></i>
       </button>
       <button className="right-btn" onClick={increment}>
-        <i class="fas fa-angle-right"></i>
+        <i className="fas fa-angle-right"></i>
       </button>
     </ProjectsSection>
   );

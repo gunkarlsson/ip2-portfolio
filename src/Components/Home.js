@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { animateScroll as scroll } from "react-scroll";
 
@@ -10,13 +10,13 @@ const HomeDiv = styled.div`
     h1 {
       font-size: 8rem;
       line-height: 7.7rem;
-      -webkit-text-stroke: 0.01px rgb(0, 0, 0);
+      -webkit-text-stroke: 0.1px black;
       margin: 60px 0 20px 60px;
       transition: all 0.3s ease;
     }
 
     h1:hover {
-      color: transparent;
+      color: var(--secondary-color);
     }
 
     h2 {
@@ -92,7 +92,7 @@ function Home() {
       </section>
 
       <button onClick={() => scroll.scrollToBottom()}>
-        <i class="fas fa-arrow-down"></i>
+        <i className="fas fa-arrow-down"></i>
       </button>
     </HomeDiv>
   );
