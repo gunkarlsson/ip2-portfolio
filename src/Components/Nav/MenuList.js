@@ -9,7 +9,7 @@ const Ul = styled.ul`
   display: flex;
   flex-flow: column nowrap;
   list-style: none;
-  background-color: var(--primary-color);
+  background-color: ${(props) => props.theme.bgColor1};
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.4s ease;
   margin: 0;

@@ -17,7 +17,7 @@ const BurgerIcon = styled.div`
   .burger-line {
     width: 2rem;
     height: 0.25rem;
-    background-color: ${({ open }) => (open ? "#827979" : "black")};
+    background-color: ${(props) => props.theme.fontColor1};
     border-radius: 10px;
     transform-origin: 1px;
     transition: transform 0.3s ease-in-out, opacity 0.1s ease;
