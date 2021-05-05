@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useWindowSize } from "./hooks/useWindowSize";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
@@ -11,7 +11,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./style/Themes";
 import { Wrapper } from "./style/StyledComponents";
 import { useDarkmodeContext } from "./style/DarkmodeContext";
-
+import { CustomCursor } from "./Components/CustomCursor";
 function App() {
   const { theme, lightTheme, darkTheme } = useDarkmodeContext();
   //HOOK
@@ -55,18 +55,45 @@ function App() {
     requestAnimationFrame(() => skewScrolling());
   };
 
+  // const [cursorX, setCursorX] = useState();
+  // const [cursorY, setCursorY] = useState();
+  // window.addEventListener("mousemove", (e) => {
+  //   setCursorX(e.pageX);
+  //   setCursorY(e.pageY);
+  // });
+
+  // const cursor2 = useRef();
+  // window.addEventListener("mousemove", (e) => {
+  //   cursor2.style.left = e.pageX + "px";
+  //   cursor2.style.top = e.pageY + "px";
+  // });
+
+  // const cursor = document.querySelector(".cursor");
+  // document.addEventListener("mousemove", (e) => {
+  //   cursor.style.left = e.pageX + "px";
+  //   cursor.style.top = e.pageY + "px";
+  // });
+
   return (
     <Router>
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
         <GlobalStyle />
-        <Wrapper ref={app} className="App">
-          <section ref={scrollContainer} className="scroll">
-            <Burger />
-            <Home className="home" />
-            <Projects className="projects" />
-            <About className="about" name="Gun" />
-            <Contact className="contact" />
-          </section>
+        <Wrapper
+        // ref={app}
+        >
+          {/* <section ref={scrollContainer} className="scroll"> */}
+          {/* <div ref={cursor2} className="cursor2"></div> */}
+          {/* <div
+              className="cursor"
+              style={{ left: cursorX + "px", top: cursorY + "px" }}
+            ></div> */}
+          <CustomCursor />
+          <Burger />
+          <Home className="home" />
+          <Projects className="projects" />
+          <About className="about" name="Gun" />
+          <Contact className="contact" />
+          {/* </section> */}
         </Wrapper>
       </ThemeProvider>
     </Router>

@@ -11,7 +11,8 @@ const Ul = styled.ul`
   list-style: none;
   background-color: ${(props) => props.theme.bgColor1};
   transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-  transition: transform 0.4s ease;
+  /* transition: transform 0.6s cubic-bezier(0.27, 0.01, 0.35, 1); */
+  transition: transform 0.6s cubic-bezier(0.38, 0.01, 0.29, 1);
   margin: 0;
   padding: 100px 60px 55px 65px;
 

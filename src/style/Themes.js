@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
   font-family: "Work Sans";
 }
+
 /* SCROLLBAR */
 body::-webkit-scrollbar {
   width: 0.5em;

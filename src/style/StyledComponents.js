@@ -16,8 +16,18 @@ export const Wrapper = styled.main`
   height: 100%;
   width: 100%;
   overflow: hidden;
-  .scroll {
-  }
+  /* cursor: none; */
+  /* .cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid ${(props) => props.theme.fontColor1};
+    transition: 0.1s;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    mix-blend-mode: difference;
+  } */
 `;
 
 //---------------------------------- SECTIONS --------------------------------

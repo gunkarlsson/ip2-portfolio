@@ -13,7 +13,7 @@ function Contact() {
         </div>
         <article className="contact-text">
           <p>
-            Work inquiries, love letters or random hellos can be sent to >
+            Work inquiries, love letters or random hellos can be sent to
             <a href="hi@gunkarlsson.com">hi@gunkarlsson.com</a>
           </p>
 
