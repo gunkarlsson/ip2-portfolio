@@ -2,18 +2,18 @@ import styled from "styled-components";
 import { useRef, useEffect } from "react";
 
 const CursorCircle = styled.div`
-  z-index: 100;
+  z-index: 30;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  border: 1px solid blue;
+  width: 30px;
+  height: 30px;
+  border: 2px solid ${(props) => props.theme.fontColor1};
   pointer-events: none;
   overflow: hidden;
-  transform: translate3d(0, 0, 0);
+  /* transform: translate3d(0, 0, 0); */
   position: fixed;
   top: 0;
   left: 0;
-  /* transition: 0.1s ease; */
+  transition: 0.1s ease;
   transform: translate(-50%, -50%);
 `;
 

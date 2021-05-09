@@ -3,6 +3,7 @@ import styled from "styled-components";
 import MenuList from "./MenuList";
 
 const BurgerIcon = styled.div`
+  z-index: 20;
   position: fixed;
   top: 55px;
   right: 65px;
@@ -11,7 +12,7 @@ const BurgerIcon = styled.div`
   justify-content: space-around;
   width: 2rem;
   height: 2rem;
-  z-index: 10;
+
   cursor: pointer;
 
   .burger-line {

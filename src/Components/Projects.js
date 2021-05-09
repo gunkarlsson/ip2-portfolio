@@ -29,11 +29,11 @@ function Projects() {
 
   return (
     <SecondarySection>
+      <div className="section-title">
+        <h1>Project</h1>
+        {repoIndex < 9 ? <h1>0{repoIndex + 1}</h1> : <h1>{repoIndex + 1}</h1>}
+      </div>
       <ProjectsSection id="projects">
-        <div className="page-title">
-          <h1>Project</h1>
-          {repoIndex < 9 ? <h1>0{repoIndex + 1}</h1> : <h1>{repoIndex + 1}</h1>}
-        </div>
         <div className="repo-div">
           {allRepos.length > 0 && <Repo id="repo" repo={allRepos[repoIndex]} />}
         </div>

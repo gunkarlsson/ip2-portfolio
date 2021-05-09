@@ -20,10 +20,13 @@ export const GlobalStyle = createGlobalStyle`
   font-family: "Work Sans";
 }
 
+
 /* SCROLLBAR */
 body::-webkit-scrollbar {
-  width: 0.5em;
+  width: 0.3em;
+  /* display: none; */
 }
+
 body::-webkit-scrollbar-track {
   background-color: ${(props) => props.theme.bgColor1};;
 }
@@ -35,8 +38,8 @@ body::-webkit-scrollbar:hover {
   cursor: grab;
 }
 /* Works on Firefox */
-* {
+/* * {
   scrollbar-width: thin;
   scrollbar-color: black;
-}
+} */
 `;

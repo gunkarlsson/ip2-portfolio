@@ -1,6 +1,13 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.main`
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  /* cursor: none; */
   background-color: ${(props) => props.theme.bgColor2};
   border: 30px solid ${(props) => props.theme.bgColor1};
   color: ${(props) => props.theme.fontColor1};
@@ -10,32 +17,15 @@ export const Wrapper = styled.main`
   a:hover {
     background-color: ${(props) => props.theme.bgColor1};
   }
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  /* cursor: none; */
-  /* .cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid ${(props) => props.theme.fontColor1};
-    transition: 0.1s;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    mix-blend-mode: difference;
-  } */
 `;
 
 //---------------------------------- SECTIONS --------------------------------
 export const PrimarySection = styled.section`
-  height: 95vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
   .title {
     width: 60vw;
     h1 {
@@ -85,20 +75,88 @@ export const PrimarySection = styled.section`
     }
   } */
 `;
+
 export const SecondarySection = styled.section`
-  height: 95vh;
+  height: 80vh;
   max-width: 95vw;
   display: flex;
   justify-content: space-around;
-  border: 2px solid yellow;
 
-  h1 {
-    font-size: 5rem;
-    line-height: 3rem;
-    margin: 100px 0 0 90px;
+  .section-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h1:first-of-type {
+      line-height: 3rem;
+      margin: 0px 0 0 40px;
+    }
+    h1 {
+      font-size: 5rem;
+      margin: 20px 30px 0 120px;
+    }
   }
-  h1:last-of-type {
-    margin: 40px 30px 0 190px;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 30px;
+    max-width: 60vw;
+    padding: 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .about-text {
+    p {
+      margin-bottom: 20px;
+    }
+    span {
+      text-decoration: underline;
+    }
+    span:hover {
+      background-color: ${(props) => props.theme.bgColor1};
+    }
+    img {
+      opacity: 0;
+      width: 200px;
+      height: 200px;
+      border: 10px solid ${(props) => props.theme.bgColor1};
+      position: absolute;
+      display: block;
+    }
+    img:first-of-type {
+      margin-left: 5vw;
+    }
+    img:last-of-type {
+      margin-left: 20vw;
+    }
+    .hover-text1:hover ~ img:first-of-type {
+      opacity: 1;
+      transform: translateY(20px) translateX(-10px);
+      transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
+    }
+    .hover-text2:hover ~ img:last-of-type {
+      opacity: 1;
+      transform: translateY(20px) translateX(30px);
+      transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
+    }
+  }
+
+  .contact-text {
+    p {
+      margin-left: 50px;
+      width: 80%;
+    }
+
+    a {
+      margin-right: 20px;
+    }
+    hr {
+      border: 1px solid ${(props) => props.theme.fontColor1};
+      margin: 50px 0 50px 50px;
+      width: 75%;
+    }
   }
 `;
 
@@ -166,71 +224,63 @@ export const RepoDiv = styled.div`
   }
 `;
 
-export const AboutSection = styled.section`
-  .about-text {
-    max-width: 52vw;
-    padding: 20px;
-    margin-top: 50px;
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-    span {
-      text-decoration: underline;
-    }
-  }
+// export const AboutSection = styled.section`
+//   .about-text {
+//     max-width: 52vw;
+//     padding: 20px;
+//     margin-top: 50px;
+//     p {
+//       font-size: 1.2rem;
+//       margin-bottom: 20px;
+//       font-weight: 500;
+//     }
+//     span {
+//       text-decoration: underline;
+//     }
+//   }
 
-  img {
-    opacity: 0;
-    width: 200px;
-    height: 200px;
-    margin-right: 90px;
-    border: 15px solid var(--primary-color);
-  }
+//   img {
+//     opacity: 0;
+//     width: 200px;
+//     height: 200px;
+//     margin-right: 90px;
+//     border: 15px solid var(--primary-color);
+//   }
 
-  a {
-    text-decoration: underline;
-    cursor: pointer;
-  }
+//   a {
+//     text-decoration: underline;
+//     cursor: pointer;
+//   }
 
-  .hover-text1:hover ~ img:first-of-type {
-    opacity: 1;
-    transform: translateY(30px) translateX(-0px);
-    transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
-  }
-  .hover-text2:hover ~ img:last-of-type {
-    opacity: 1;
-    transform: translateY(20px) translateX(70px);
-    transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
-  }
-`;
+//   .hover-text1:hover ~ img:first-of-type {
+//     opacity: 1;
+//     transform: translateY(30px) translateX(-0px);
+//     transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
+//   }
+//   .hover-text2:hover ~ img:last-of-type {
+//     opacity: 1;
+//     transform: translateY(20px) translateX(70px);
+//     transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
+//   }
+// `;
 
-export const ContactSection = styled.section`
-  .contact-text {
-    margin-top: 90px;
-    max-width: 52vw;
-    padding: 50px;
-    font-size: 1.2rem;
-    font-weight: 500;
-
-    .contact-links {
-      margin-top: 10px;
-    }
-    a {
-      margin-right: 10px;
-    }
-    p:last-of-type {
-      margin-top: 90px;
-      font-style: italic;
-    }
-  }
-  hr {
-    border: 1px solid black;
-    margin-top: 50px;
-    width: 100%;
-  }
-`;
+// export const ContactSection = styled.section`
+//   .contact-text {
+//     margin-top: 90px;
+//     max-width: 52vw;
+//     padding: 50px;
+//     font-size: 1.2rem;
+//     font-weight: 500;
+//     a {
+//       margin-right: 20px;
+//     }
+//   }
+//   hr {
+//     border: 1px solid black;
+//     margin: 50px 0;
+//     width: 100%;
+//   }
+// `;
 
 //---------------------------------- BUTTONS --------------------------------
 export const ToggleSwitchWrapper = styled.div`
@@ -281,21 +331,58 @@ export const ToggleSwitchWrapper = styled.div`
 `;
 
 export const ArrowButton = styled.button`
-    margin-top: 150px;
-    margin-left: 60px;
-    font-size: 0.9rem;
-    outline: none;
-    border: 1px solid ${(props) => props.theme.fontColor1};
+   border: 1px solid ${(props) => props.theme.fontColor1};
     color: ${(props) => props.theme.fontColor1};
     background-color: transparent;
+    outline: none;
     border-radius: 50%;
     width: 55px;
     height: 55px;
     cursor: pointer;
   }
-  button:hover {
+  :hover {
     transition: transform 0.4s ease;
     transform: scale(1.3);
     border: 2px solid ${(props) => props.theme.fontColor1};
+  }
+`;
+
+export const DarkmodeButton = styled.div`
+  /* width: 160px; */
+  margin: 50px 20px 0 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  span {
+    opacity: 0;
+    margin-left: 10px;
+    transition: opacity 0.3s ease;
+    font-weight: 500;
+  }
+
+  .full {
+    border: 2px solid ${(props) => props.theme.fontColor1};
+    height: 42px;
+    width: 42px;
+    border-radius: 50%;
+    background-color: none;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+  }
+  .half {
+    display: inline-block;
+    background-color: ${(props) => props.theme.fontColor1};
+    height: 40px;
+    width: 20px;
+    border-radius: 40px 0 0 40px;
+    transform: rotate(0deg);
+    transform: translateX(-2%);
+  }
+  .full:hover {
+    transform: rotate(180deg) scale(1.03);
+  }
+  .full:hover + span {
+    opacity: 1;
   }
 `;
