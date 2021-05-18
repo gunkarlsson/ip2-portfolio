@@ -39,7 +39,7 @@ export const PrimarySection = styled.section`
       margin: 0px 0px 0px 62px;
     }
     hr {
-      border: 2px solid black;
+      border: 2px solid ${(props) => props.theme.fontColor1};
       width: 50vw;
       margin-left: 62px;
       margin-bottom: 20px;
@@ -123,6 +123,9 @@ export const SecondarySection = styled.section`
     span:hover {
       background-color: ${(props) => props.theme.bgColor1};
     }
+    .test {
+      border: 2px solid yellow;
+    }
     img {
       opacity: 0;
       width: 200px;
@@ -132,20 +135,20 @@ export const SecondarySection = styled.section`
       display: block;
     }
     img:first-of-type {
-      margin-left: 5vw;
+      margin-left: 10vw;
     }
     img:last-of-type {
-      margin-left: 20vw;
+      margin-left: 25vw;
     }
     .hover-text1:hover ~ img:first-of-type {
       opacity: 1;
       transform: translateY(20px) translateX(-10px);
-      transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
+      transition: 0.5s cubic-bezier(0.33, 0.01, 0.38, 1.01);
     }
     .hover-text2:hover ~ img:last-of-type {
       opacity: 1;
       transform: translateY(20px) translateX(30px);
-      transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
+      transition: 0.5s cubic-bezier(0.33, 0.01, 0.38, 1.01);
     }
   }
 
@@ -177,7 +180,7 @@ export const ProjectsSection = styled.section`
   button {
     outline: none;
     border: none;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(244, 240, 223, 0.6);
     font-size: 1.2rem;
     width: 80px;
     height: 60px;
@@ -186,7 +189,7 @@ export const ProjectsSection = styled.section`
   }
 
   button:hover {
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(244, 240, 223, 1);
   }
   .left-btn {
     border-radius: 50px 0 0 50px;
@@ -220,7 +223,7 @@ export const RepoDiv = styled.div`
     max-width: 1280px;
     img {
       width: 100%;
-      outline: 6px solid white;
+      outline: 6px solid #f4f0df;
       outline-offset: -3px;
     }
   }

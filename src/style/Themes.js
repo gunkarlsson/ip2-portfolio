@@ -7,9 +7,9 @@ export const lightTheme = {
 };
 
 export const darkTheme = {
-  bgColor1: "black",
-  bgColor2: "#4C4C4C",
-  fontColor1: "white",
+  bgColor1: "#0F1847",
+  bgColor2: "#070D31",
+  fontColor1: "#f4f0df",
 };
 
 export const GlobalStyle = createGlobalStyle`
