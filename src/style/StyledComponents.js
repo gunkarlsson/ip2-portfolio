@@ -21,18 +21,17 @@ export const Wrapper = styled.main`
 
 //---------------------------------- SECTIONS --------------------------------
 export const PrimarySection = styled.section`
-  height: 90vh;
+  height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: 2px solid blue;
 
   .title {
     width: 55vw;
     h1 {
       font-size: 8rem;
       line-height: 7.7rem;
-      margin: 60px 0 20px 60px;
+      margin: 0 0 20px 60px;
     }
     h2 {
       font-size: 2.2rem;
@@ -84,19 +83,21 @@ export const SecondarySection = styled.section`
   height: 80vh;
   max-width: 95vw;
   display: flex;
-  justify-content: space-around;
-  border: 2px solid green;
+  justify-content: space-between;
 
   .section-title {
+    width: 30vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: ${(props) => props.theme.bgColor1};
+
     h1:first-of-type {
       line-height: 3rem;
-      margin: 0px 0 0 40px;
+      margin: 0px 10px 0 60px;
     }
     h1 {
-      font-size: 5rem;
+      font-size: 4.6rem;
       margin: 20px 30px 0 120px;
     }
   }
@@ -105,7 +106,6 @@ export const SecondarySection = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 30px;
     max-width: 60vw;
     padding: 50px;
     font-size: 1.2rem;
@@ -114,6 +114,7 @@ export const SecondarySection = styled.section`
 
   .about-text {
     p {
+      max-width: 90%;
       margin-bottom: 20px;
     }
     span {
@@ -149,6 +150,7 @@ export const SecondarySection = styled.section`
   }
 
   .contact-text {
+    margin-bottom: 30px;
     p {
       margin-left: 50px;
       width: 80%;
@@ -166,44 +168,37 @@ export const SecondarySection = styled.section`
 `;
 
 export const ProjectsSection = styled.section`
-  display: grid;
-  grid-template: 1fr 6fr 1fr / 5fr 1fr 9fr 1fr;
-
-  .page-title {
-    grid-row: 1 / -1;
-    grid-column: 1;
-    background-color: var(--primary-color);
-  }
-
-  .repo-div {
-    grid-row: 2;
-    grid-column: 3;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 60vw;
+  padding: 30px;
 
   button {
     outline: none;
     border: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    font-size: 1.5rem;
-    width: 50px;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-size: 1.2rem;
+    width: 80px;
     height: 60px;
     cursor: pointer;
     transition: all 0.3s ease;
   }
+
   button:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1);
   }
   .left-btn {
-    grid-row: 2;
-    grid-column: 2;
-    align-self: center;
-    justify-self: right;
+    border-radius: 50px 0 0 50px;
+  }
+  .left-btn i {
+    transform: translateX(20%);
   }
   .right-btn {
-    grid-row: 2;
-    grid-column: 4;
-    align-self: center;
-    justify-self: left;
+    border-radius: 0 50px 50px 0;
+  }
+  .right-btn i {
+    transform: translateX(-20%);
   }
 `;
 
@@ -215,12 +210,14 @@ export const RepoDiv = styled.div`
     }
   }
   .info-text {
+    margin-top: 10px;
     font-size: 1.2rem;
     font-weight: 500;
-    line-height: 1rem;
+    line-height: 1.3rem;
   }
 
   .repo-image {
+    max-width: 1280px;
     img {
       width: 100%;
       outline: 6px solid white;
@@ -229,147 +226,26 @@ export const RepoDiv = styled.div`
   }
 `;
 
-// export const AboutSection = styled.section`
-//   .about-text {
-//     max-width: 52vw;
-//     padding: 20px;
-//     margin-top: 50px;
-//     p {
-//       font-size: 1.2rem;
-//       margin-bottom: 20px;
-//       font-weight: 500;
-//     }
-//     span {
-//       text-decoration: underline;
-//     }
-//   }
-
-//   img {
-//     opacity: 0;
-//     width: 200px;
-//     height: 200px;
-//     margin-right: 90px;
-//     border: 15px solid var(--primary-color);
-//   }
-
-//   a {
-//     text-decoration: underline;
-//     cursor: pointer;
-//   }
-
-//   .hover-text1:hover ~ img:first-of-type {
-//     opacity: 1;
-//     transform: translateY(30px) translateX(-0px);
-//     transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
-//   }
-//   .hover-text2:hover ~ img:last-of-type {
-//     opacity: 1;
-//     transform: translateY(20px) translateX(70px);
-//     transition: 0.6s cubic-bezier(0.33, 0.01, 0.38, 1.01);
-//   }
-// `;
-
-// export const ContactSection = styled.section`
-//   .contact-text {
-//     margin-top: 90px;
-//     max-width: 52vw;
-//     padding: 50px;
-//     font-size: 1.2rem;
-//     font-weight: 500;
-//     a {
-//       margin-right: 20px;
-//     }
-//   }
-//   hr {
-//     border: 1px solid black;
-//     margin: 50px 0;
-//     width: 100%;
-//   }
-// `;
-
 //---------------------------------- BUTTONS --------------------------------
-export const ToggleSwitchWrapper = styled.div`
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    background-color: ${(props) => props.theme.bgColor1};
-    //BACKGROUND WHEN OFF
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  .slider:before {
-    background-color: white;
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    transition: all 0.3s ease-in-out;
-  }
-  input:checked + .slider {
-    background-color: ${(props) => props.theme.bgColor1};
-    //BACKGROUND WHEN ON
-  }
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  .slider.rounded {
-    border-radius: 34px;
-  }
-  .slider.rounded:before {
-    border-radius: 50%;
-  }
-`;
-
-export const ArrowButton = styled.button`
-  border: 1px solid ${(props) => props.theme.fontColor1};
-  color: ${(props) => props.theme.fontColor1};
-  background-color: transparent;
-  outline: none;
-  border-radius: 50%;
-  width: 55px;
-  height: 55px;
-  cursor: pointer;
-
-  :hover {
-    transition: transform 0.4s ease;
-    transform: scale(1.3);
-    border: 2px solid ${(props) => props.theme.fontColor1};
-  }
-`;
 
 export const DarkmodeButton = styled.div`
-  /* width: 160px; */
-  margin: 50px 20px 0 0;
+  z-index: 5;
+  position: fixed;
+  top: 55px;
+  right: 130px;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
 
   span {
     opacity: 0;
-    margin-left: 10px;
-    transition: opacity 0.3s ease;
+    margin-right: 10px;
+    transition: opacity 0.4s ease;
     font-weight: 500;
   }
-
   .full {
     border: 2px solid ${(props) => props.theme.fontColor1};
-    height: 42px;
-    width: 42px;
+    height: 32px;
+    width: 32px;
     border-radius: 50%;
     background-color: none;
     cursor: pointer;
@@ -378,8 +254,8 @@ export const DarkmodeButton = styled.div`
   .half {
     display: inline-block;
     background-color: ${(props) => props.theme.fontColor1};
-    height: 40px;
-    width: 20px;
+    height: 30px;
+    width: 15px;
     border-radius: 40px 0 0 40px;
     transform: rotate(0deg);
     transform: translateX(-2%);
@@ -388,7 +264,73 @@ export const DarkmodeButton = styled.div`
   .full:hover {
     transform: rotate(180deg) scale(1.03);
   }
-  .full:hover + span {
+
+  :hover span {
     opacity: 1;
   }
 `;
+
+// export const ToggleSwitchWrapper = styled.div`
+//   .switch {
+//     position: relative;
+//     display: inline-block;
+//     width: 60px;
+//     height: 34px;
+//   }
+//   .switch input {
+//     opacity: 0;
+//     width: 0;
+//     height: 0;
+//   }
+//   .slider {
+//     background-color: ${(props) => props.theme.bgColor1};
+//     //BACKGROUND WHEN OFF
+//     position: absolute;
+//     cursor: pointer;
+//     top: 0;
+//     left: 0;
+//     right: 0;
+//     bottom: 0;
+//   }
+//   .slider:before {
+//     background-color: white;
+//     position: absolute;
+//     content: "";
+//     height: 26px;
+//     width: 26px;
+//     left: 4px;
+//     bottom: 4px;
+//     transition: all 0.3s ease-in-out;
+//   }
+//   input:checked + .slider {
+//     background-color: ${(props) => props.theme.bgColor1};
+//     //BACKGROUND WHEN ON
+//   }
+//   input:checked + .slider:before {
+//     transform: translateX(26px);
+//   }
+//   .slider.rounded {
+//     border-radius: 34px;
+//   }
+//   .slider.rounded:before {
+//     border-radius: 50%;
+//   }
+//
+// `;
+
+// // export const ArrowButton = styled.button`;
+//   border: 1px solid ${(props) => props.theme.fontColor1};
+//   color: ${(props) => props.theme.fontColor1};
+//   background-color: transparent;
+//   outline: none;
+//   border-radius: 50%;
+//   width: 55px;
+//   height: 55px;
+//   cursor: pointer;
+
+//   :hover {
+//     transition: transform 0.4s ease;
+//     transform: scale(1.3);
+//     border: 2px solid ${(props) => props.theme.fontColor1};
+//   }
+// `;

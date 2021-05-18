@@ -15,7 +15,7 @@ function Home() {
           <h2>Front-end developer</h2>
           <h2>Portfolio 2021</h2>
         </section>
-        <DarkmodeButton
+        {/* <DarkmodeButton
           onClick={() => {
             themeToggler();
             setIsToggled((prev) => !prev);
@@ -25,7 +25,7 @@ function Home() {
             <div className="half" isToggled={isToggled} />
           </div>
           <span>Dark mode</span>
-        </DarkmodeButton>
+        </DarkmodeButton> */}
       </PrimarySection>
     </>
   );

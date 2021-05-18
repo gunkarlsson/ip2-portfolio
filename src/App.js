@@ -12,9 +12,12 @@ import { GlobalStyle } from "./style/Themes";
 import { Wrapper } from "./style/StyledComponents";
 import { useDarkmodeContext } from "./style/DarkmodeContext";
 import { CustomCursor } from "./Components/CustomCursor";
+import { DarkmodeButton } from "./style/StyledComponents";
 
 function App() {
   const { theme, lightTheme, darkTheme } = useDarkmodeContext();
+  const { themeToggler } = useDarkmodeContext();
+  const [isToggled, setIsToggled] = useState(false);
 
   //SMOOTH SCROLL
   const size = useWindowSize();
@@ -53,11 +56,23 @@ function App() {
         <Wrapper>
           {/* <CustomCursor /> */}
           <Burger />
+          <DarkmodeButton>
+            <span>Dark mode</span>
+            <div
+              className="full"
+              onClick={() => {
+                themeToggler();
+                setIsToggled((prev) => !prev);
+              }}
+            >
+              <div className="half" isToggled={isToggled} />
+            </div>
+          </DarkmodeButton>
           <section ref={scrollContainer} className="scroll">
             <Home className="home" />
             <Projects className="projects" />
-            <About id="about" className="about" name="Gun" />
-            <Contact id="contact" className="contact" />
+            <About className="about" name="Gun" />
+            <Contact className="contact" />
           </section>
         </Wrapper>
       </ThemeProvider>

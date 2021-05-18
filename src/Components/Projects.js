@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Repo from "./Repo";
-import { selectedRepos } from "./SelectedRepos";
+import { selectedRepos } from "./Repo";
 import { ProjectsSection, SecondarySection } from "../style/StyledComponents";
 
 function Projects() {
@@ -28,18 +28,18 @@ function Projects() {
   }, []);
 
   return (
-    <SecondarySection>
+    <SecondarySection id="projects">
       <div className="section-title">
         <h1>Project</h1>
         {repoIndex < 9 ? <h1>0{repoIndex + 1}</h1> : <h1>{repoIndex + 1}</h1>}
       </div>
-      <ProjectsSection id="projects">
-        <div className="repo-div">
-          {allRepos.length > 0 && <Repo id="repo" repo={allRepos[repoIndex]} />}
-        </div>
+      <ProjectsSection>
         <button className="left-btn" onClick={decrement}>
           <i className="fas fa-angle-left"></i>
         </button>
+        <div className="repo-div">
+          {allRepos.length > 0 && <Repo id="repo" repo={allRepos[repoIndex]} />}
+        </div>
         <button className="right-btn" onClick={increment}>
           <i className="fas fa-angle-right"></i>
         </button>
