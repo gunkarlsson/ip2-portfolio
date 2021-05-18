@@ -52,12 +52,12 @@ function App() {
         <GlobalStyle />
         <Wrapper>
           {/* <CustomCursor /> */}
-          {/* <Burger /> */}
+          <Burger />
           <section ref={scrollContainer} className="scroll">
             <Home className="home" />
             <Projects className="projects" />
-            <About className="about" name="Gun" />
-            <Contact className="contact" />
+            <About id="about" className="about" name="Gun" />
+            <Contact id="contact" className="contact" />
           </section>
         </Wrapper>
       </ThemeProvider>

@@ -25,9 +25,10 @@ export const PrimarySection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border: 2px solid blue;
 
   .title {
-    width: 60vw;
+    width: 55vw;
     h1 {
       font-size: 8rem;
       line-height: 7.7rem;
@@ -36,16 +37,19 @@ export const PrimarySection = styled.section`
     h2 {
       font-size: 2.2rem;
       line-height: 3rem;
-      margin: 0px 0px 0px 60px;
+      margin: 0px 0px 0px 62px;
     }
     hr {
-      border: 1px solid black;
-      width: 48vw;
-      margin-left: 60px;
+      border: 2px solid black;
+      width: 50vw;
+      margin-left: 62px;
       margin-bottom: 20px;
     }
   }
 
+  i {
+    display: inline-block;
+  }
   /* MEDIA QUERIES */
   /* @media (max-width: 400px) {
     .title {
@@ -81,6 +85,7 @@ export const SecondarySection = styled.section`
   max-width: 95vw;
   display: flex;
   justify-content: space-around;
+  border: 2px solid green;
 
   .section-title {
     display: flex;
@@ -331,15 +336,15 @@ export const ToggleSwitchWrapper = styled.div`
 `;
 
 export const ArrowButton = styled.button`
-   border: 1px solid ${(props) => props.theme.fontColor1};
-    color: ${(props) => props.theme.fontColor1};
-    background-color: transparent;
-    outline: none;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    cursor: pointer;
-  }
+  border: 1px solid ${(props) => props.theme.fontColor1};
+  color: ${(props) => props.theme.fontColor1};
+  background-color: transparent;
+  outline: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+
   :hover {
     transition: transform 0.4s ease;
     transform: scale(1.3);
@@ -368,7 +373,7 @@ export const DarkmodeButton = styled.div`
     border-radius: 50%;
     background-color: none;
     cursor: pointer;
-    transition: transform 0.5s ease;
+    transition: transform 0.4s ease;
   }
   .half {
     display: inline-block;
@@ -378,6 +383,7 @@ export const DarkmodeButton = styled.div`
     border-radius: 40px 0 0 40px;
     transform: rotate(0deg);
     transform: translateX(-2%);
+    transition: transform 0.3s ease;
   }
   .full:hover {
     transform: rotate(180deg) scale(1.03);

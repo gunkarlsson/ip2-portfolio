@@ -21,7 +21,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "npm run build && cd build && echo https://gunkarlsson.surge.sh/ > CNAME && cp index.html 200.html && surge ./"
-    
   },
   "eslintConfig": {
     "extends": [

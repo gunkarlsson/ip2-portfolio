@@ -2,7 +2,7 @@ import { ContactSection, SecondarySection } from "../style/StyledComponents";
 
 function Contact() {
   return (
-    <SecondarySection>
+    <SecondarySection id="contact">
       <div className="section-title">
         <h1>Contact</h1>
       </div>

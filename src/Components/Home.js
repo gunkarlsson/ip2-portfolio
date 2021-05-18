@@ -1,13 +1,9 @@
 import { useState } from "react";
-import {
-  PrimarySection,
-  DarkmodeButton as DarkmodeButton,
-} from "../style/StyledComponents";
+import { PrimarySection, DarkmodeButton } from "../style/StyledComponents";
 import { useDarkmodeContext } from "../style/DarkmodeContext";
 
 function Home() {
   const { themeToggler } = useDarkmodeContext();
-
   const [isToggled, setIsToggled] = useState(false);
 
   return (

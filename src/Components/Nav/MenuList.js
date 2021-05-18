@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { HashLink as Link } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 
 const Ul = styled.ul`
   z-index: 10;
@@ -39,18 +39,18 @@ const Ul = styled.ul`
 function MenuList({ open }) {
   return (
     <Ul open={open}>
-      <Link to="#home" smooth={true}>
+      <HashLink to="#home" smooth={true}>
         Home
-      </Link>
-      <Link to="#projects" smooth={true}>
+      </HashLink>
+      <HashLink to="#projects" smooth={true}>
         Projects
-      </Link>
-      <Link to="#about" smooth={true}>
+      </HashLink>
+      <HashLink to="#about" smooth={true}>
         About
-      </Link>
-      <Link to="#contact" smooth={true}>
+      </HashLink>
+      <HashLink to="#contact" smooth={true}>
         Contact
-      </Link>
+      </HashLink>
     </Ul>
   );
 }

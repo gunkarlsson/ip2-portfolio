@@ -4,17 +4,30 @@ import { useRef, useEffect } from "react";
 const CursorCircle = styled.div`
   z-index: 30;
   border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  border: 2px solid ${(props) => props.theme.fontColor1};
+  /* border-radius:74% 26% 76% 24% / 69% 22% 78% 31% ; */
+  width: 20px;
+  height: 20px;
+  border: 1px solid ${(props) => props.theme.fontColor1};
   pointer-events: none;
   overflow: hidden;
   /* transform: translate3d(0, 0, 0); */
   position: fixed;
   top: 0;
   left: 0;
-  transition: 0.1s ease;
+  transition: 0.15s ease;
   transform: translate(-50%, -50%);
+
+  /* &:before {
+    position: fixed;
+    content: "";
+    transform: tran;
+  }
+  &:after {
+    position: fixed;
+    content: "";
+    width: 60px;
+    height: 30px;
+  } */
 `;
 
 export const CustomCursor = () => {

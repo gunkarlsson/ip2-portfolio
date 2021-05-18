@@ -5,7 +5,7 @@ import { AboutSection, SecondarySection } from "../style/StyledComponents";
 
 function About(props) {
   return (
-    <SecondarySection>
+    <SecondarySection id="about">
       <div className="section-title">
         <h1>About</h1>
         <h1>{props.name}</h1>
